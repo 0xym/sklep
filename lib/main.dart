@@ -26,43 +26,45 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: Center(child: Text("SKLEP")),
         ),
-        body: Column(children: <Widget>[
-          ListTile(
-            title: Text(
-              "Instrukcja",
-              style: TextStyle(fontWeight: FontWeight.bold),
+        body: SingleChildScrollView(
+          child: Column(children: <Widget>[
+            ListTile(
+              title: Text(
+                "Instrukcja",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Text(
-              "OWOCE I WARZYWA TO SĄ WINOGRONA,BANANY,WIŚNIE,JABŁKA,GRUSZKI I MARCHEWKI,OGURKI,ZIEMNIAKI,AWOKADO,BAKŁAŻAN",
-              style: TextStyle(fontWeight: FontWeight.bold, height: 1.5),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Text(
+                "OWOCE I WARZYWA TO SĄ WINOGRONA,BANANY,WIŚNIE,JABŁKA,GRUSZKI I MARCHEWKI,OGURKI,ZIEMNIAKI,AWOKADO,BAKŁAŻAN",
+                style: TextStyle(fontWeight: FontWeight.bold, height: 1.5),
+              ),
             ),
-          ),
-          SizedBox(
-            height: 100,
-          ),
-          RaisedButton(
-            child: Text("GRAJ"),
-            onPressed: () {Navigator.of(context).pushNamed(EkranGry.routeName);},
-          ),
-          FlatButton(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 200.0),
-              child: Text("POZIOMY"),
+            SizedBox(
+              height: 100,
             ),
-            onPressed: () {},
-          ),
-          FlatButton(child: Text("ZASADY GRY"),onPressed: (){},),
-          FlatButton(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 200.0),
-              child: Text("RZECZY :)"),
+            RaisedButton(
+              child: Text("GRAJ"),
+              onPressed: () {Navigator.of(context).pushNamed(EkranGry.routeName);},
             ),
-            onPressed: () {},
-          ),
-          
-        ]));
+            FlatButton(
+              child: Padding(
+                padding: const EdgeInsets.only(right: 200.0),
+                child: Text("POZIOMY"),
+              ),
+              onPressed: () {},
+            ),
+            FlatButton(child: Text("ZASADY GRY"),onPressed: (){},),
+            FlatButton(
+              child: Padding(
+                padding: const EdgeInsets.only(right: 200.0),
+                child: Text("RZECZY :)"),
+              ),
+              onPressed: () {},
+            ),
+            
+          ]),
+        ));
   }
 }
