@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:targ/ekran_gry.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: HomePage(),
+      routes: {EkranGry.routeName: (_) => EkranGry()},
     );
   }
 }
@@ -43,7 +45,7 @@ class HomePage extends StatelessWidget {
           ),
           RaisedButton(
             child: Text("GRAJ"),
-            onPressed: () {},
+            onPressed: () {Navigator.of(context).pushNamed(EkranGry.routeName);},
           ),
           FlatButton(
             child: Padding(
