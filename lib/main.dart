@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
-                "OWOCE I WARZYWA TO SĄ WINOGRONA,BANANY,WIŚNIE,JABŁKA,GRUSZKI I MARCHEWKI,OGURKI,ZIEMNIAKI,AWOKADO,BAKŁAŻAN",
+                "OWOCE I WARZYWA TO SĄ WINOGRONA,BANANY,WIŚNIE,JABŁKA,GRUSZKI I MARCHEWKI,OGÓRKI,ZIEMNIAKI,KUKURDZAA,BAKŁAŻAN",
                 style: TextStyle(fontWeight: FontWeight.bold, height: 1.5),
               ),
             ),
@@ -46,7 +46,9 @@ class HomePage extends StatelessWidget {
             ),
             RaisedButton(
               child: Text("GRAJ"),
-              onPressed: () {Navigator.of(context).pushNamed(EkranGry.routeName);},
+              onPressed: () {
+                Navigator.of(context).pushNamed(EkranGry.routeName);
+              },
             ),
             FlatButton(
               child: Padding(
@@ -55,7 +57,10 @@ class HomePage extends StatelessWidget {
               ),
               onPressed: () {},
             ),
-            FlatButton(child: Text("ZASADY GRY"),onPressed: (){},),
+            FlatButton(
+              child: Text("ZASADY GRY"),
+              onPressed: () {},
+            ),
             FlatButton(
               child: Padding(
                 padding: const EdgeInsets.only(right: 200.0),
@@ -63,7 +68,6 @@ class HomePage extends StatelessWidget {
               ),
               onPressed: () {},
             ),
-            
           ]),
         ));
   }
