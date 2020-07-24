@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Text(
-                "OWOCE I WARZYWA TO SĄ WINOGRONA,BANANY,WIŚNIE,JABŁKA,GRUSZKI I MARCHEWKI,OGÓRKI,ZIEMNIAKI,KUKURDZAA,BAKŁAŻAN",
+                "OWOCE I WARZYWA TO SĄ WINOGRONA,BANANY,WIŚNIE,JABŁKA,GRUSZKI I MARCHEWKI,OGÓRKI,ZIEMNIAKI,KUKURDZA,BAKŁAŻAN",
                 style: TextStyle(fontWeight: FontWeight.bold, height: 1.5),
               ),
             ),

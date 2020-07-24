@@ -11,6 +11,9 @@ class EkranGry extends StatefulWidget {
 }
 
 class _EkranGryState extends State<EkranGry> {
+  static const iloscRodzajowOwocow = 5;
+  final wysokosc = 5;
+  final szerokosc = 6;
   Random generator = Random();
   List<List<int>> plansza;
   int _winogrona = 0; //1
@@ -38,51 +41,26 @@ class _EkranGryState extends State<EkranGry> {
     return ' ';
   }
 
-  Widget _widgetOwocu(int x, int y) {
+  
+  Widget _widgetOwocu(int owoc) {
     return Text(
-      _obrazekOwocu(plansza[x][y]),
+      _obrazekOwocu(owoc),
       style: TextStyle(fontSize: 50),
     );
   }
 
   _EkranGryState() {
-    plansza = [
-      [
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-      ],
-      [
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-      ],
-      [
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-      ],
-      [
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-      ],
-      [
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-        generator.nextInt(5) + 1,
-      ],
-    ];
+    plansza = [];
+    for (var i = 0; i < wysokosc; i ++)
+    {
+      var rzad = <int>[];
+      for (var i = 0; i < szerokosc; i++)
+      {
+        rzad.add(generator.nextInt(iloscRodzajowOwocow) + 1);
+      }
+      plansza.add(rzad);
+    }
+
     //_winogrona = 0000;
     /*for (var i = 0; i < 5; i++)
       for (var j = 0; j < 5; j++) {
@@ -108,55 +86,17 @@ class _EkranGryState extends State<EkranGry> {
             thickness: 2.5,
             color: Colors.black,
           ),
-          Column(
-            children: <Widget>[
-              SizedBox(height: 60),
-              Row(
-                children: <Widget>[
-                  _widgetOwocu(0, 0),
-                  _widgetOwocu(0, 1),
-                  _widgetOwocu(0, 2),
-                  _widgetOwocu(0, 3),
-                  _widgetOwocu(0, 4),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  _widgetOwocu(1, 0),
-                  _widgetOwocu(1, 1),
-                  _widgetOwocu(1, 2),
-                  _widgetOwocu(1, 3),
-                  _widgetOwocu(1, 4),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  _widgetOwocu(2, 0),
-                  _widgetOwocu(2, 1),
-                  _widgetOwocu(2, 2),
-                  _widgetOwocu(2, 3),
-                  _widgetOwocu(2, 4),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  _widgetOwocu(3, 0),
-                  _widgetOwocu(3, 1),
-                  _widgetOwocu(3, 2),
-                  _widgetOwocu(3, 3),
-                  _widgetOwocu(3, 4),
-                ],
-              ),
-              Row(
-                children: <Widget>[
-                  _widgetOwocu(4, 0),
-                  _widgetOwocu(4, 1),
-                  _widgetOwocu(4, 2),
-                  _widgetOwocu(4, 3),
-                  _widgetOwocu(4, 4),
-                ],
-              ),
-            ],
+          FittedBox(
+            fit: BoxFit.contain,
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: 50),
+                Column(children: plansza.map((rzad) => 
+                  Row(children: rzad.map(
+                    (owoc) => _widgetOwocu(owoc)).toList())).toList()),
+                SizedBox(height: 50),
+              ],
+            ),
           )
         ],
       ),
